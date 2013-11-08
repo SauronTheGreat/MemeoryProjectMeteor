@@ -4304,18 +4304,21 @@ if(typeof VMM != 'undefined' && typeof VMM.ExternalAPI == 'undefined') {
 
 			create: function(m, callback) {
 				trace("VIMEO CREATE");
-				var thumb_url	= "http://vimeo.com/api/v2/video/" + m.id + ".json",
+				//var thumb_url	= "http://vimeo.com/api/v2/video/" + m.id + ".json",
 					//video_url	='<object type="application/x-shockwave-flash" width="100%" height="100%" id="player" class="OoyalaVideoPlayer" data="http://player.ooyala.com/player_v2.swf"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="bgcolor" value="#000000"><param name="wmode" value="window"><param name="flashvars" value="me=player&amp;embedCode='+m.id+'&amp;width=480&amp;height=360&amp;version=3&amp;callback=receiveOoyalaEvent&amp;video_pcode=xtODExOlNJiVRCa3wDht1xVxD1hU&amp;contactServer=player.ooyala.com/Q2HGKJ-PryQsG7CT&amp;"></object>'
-					video_url = '<div class="ooyala_wrap" style="height:100%;width:100%" id='+m.id+'></div>'
-				VMM.getJSON(thumb_url, function(d) {
-					VMM.ExternalAPI.ooyala.createThumb(d, m);
-					callback();
-				});
+					//video_url = '<div class="ooyala_wrap" style="height:100%;width:100%" id='+m.id+'></div>'
+                embed_code="https://player.ooyala.com/tframe.html?pbid=6fb23f9e4ccd4dc99309234c2d122098&embedCode="+m.id.toString();
+                video_url='<iframe width="320" height="240" frameborder="0" src='+embed_code+'></iframe>'
+//				VMM.getJSON(thumb_url, function(d) {
+//					VMM.ExternalAPI.ooyala.createThumb(d, m);
+//					callback();
+//				});
 
-
+                VMM.attachElement("#" + m.uid, video_url);
 				// VIDEO
-				a=VMM.attachElement("#" + m.uid, video_url);
 
+				//a=VMM.attachElement("#" + m.uid, video_url);
+				//load_this(m.id.toString(),m.id.toString());
 
 			},
 
@@ -6114,36 +6117,33 @@ if (typeof VMM.Slider != 'undefined') {
 			$slide	= VMM.appendAndGetElement($wrap, "<div>");
             var $rowOne	= VMM.appendAndGetElement($slide, "<div>","row");
             var $rowTwo	= VMM.appendAndGetElement($slide, "<div>","row");
-            var $rowThree	= VMM.appendAndGetElement($slide, "<div>","row");
-            var $mediablock	= VMM.appendAndGetElement($rowTwo, "<div>", "col-lg-6 col-md-8 mediablock");
+            var $mediablock	= VMM.appendAndGetElement($rowTwo, "<div>", "col-lg-6 col-md-8");
             var $textblock	= VMM.appendAndGetElement($rowTwo, "<div>", "col-lg-4 col-md-10");
 			var $notch	= VMM.appendAndGetElement($slide, "<img src='/assets/notch.png' class='notchie'>");
 
             /* Row One
              ================================================== */
             var $dateHdr = VMM.appendAndGetElement($rowOne, "<div>", "dateHeading", VMM.TextElement.create(VMM.Date.prettyDate(data.startdate, false, data.precisiondate).split(" ")[0], data.uniqueid));
+//            VMM.appendAndGetElement($rowThree,"<a href='http://twitter.com/share' class='twitter-share-button' data-url='http://sachin.starsports.com'>Tweet</a><script type='text/javascript' src='http://platform.twitter.com/widgets.js'></script>", "btn btn-custom btn-lg smbtn", "Tweet")
+//            var str = "http://twitter.com/share?text="  + "'" + data.text.replace(/'/g,"") + "'"
+            var str = "http://twitter.com/share?text="  +encodeURI(data.text)
 
-            $score		= VMM.appendAndGetElement($rowOne, "<div onclick='add_to_favorite($(this));'>", "score", VMM.TextElement.create(data.score, data.uniqueid));
-            $score.html("<div class='score_text' style='color:white;position:relative;top:38px;font-size:24px;'>"+data.score+"</div><img class='popper' src='/assets/add_to_time.png' data-content='Add it to My Timeline'/><input type='hidden' class='score_secret' value="+data.classname+">");
+            var $share = VMM.appendAndGetElement($rowOne, "<div></div>", "sharer","<span>Share this memory </span><img src='/images/facebook.png' class='fbshare' onclick='add_comment_box($(this))'/> <a href="+str+"class='popup twitter'  onclick='twitter_window($(this),event)'><img src='/images/twitter.png' class='twitshare'/></a><script type='text/javascript' src='http://platform.twitter.com/widgets.js'></script> ");
+//            $($share).attr("data-text",data.text);
+//
+//            $score		= VMM.appendAndGetElement($rowOne, "<div onclick='add_to_favorite($(this));'>", "score", VMM.TextElement.create(data.score, data.uniqueid));
+//            $score.html("<div class='score_text' style='display:none;color:white;position:relative;top:38px;font-size:24px;'>"+data.score+"</div><img class='popper' src='/assets/add_to_time.png' data-content='Add it to My Timeline'/><input type='hidden' class='score_secret' value="+data.classname+">");
 
             var $yearHdr = VMM.appendAndGetElement($rowOne, "<div>", "yearHeading", VMM.TextElement.create(VMM.Date.prettyDate(data.startdate, false, data.precisiondate).split(" ")[1], data.uniqueid));
 
             /* Row Two
              ================================================== */
 
-            var $mediapiece = VMM.appendAndGetElement($mediablock, "<div>", "mediaElm", VMM.MediaElement.create(data.asset, data.uniqueid));
-            var $cardHdr = VMM.appendAndGetElement($textblock, "<div>", "cardHeading", VMM.TextElement.create(data.headline, data.uniqueid));
-            var $cardtext	= VMM.appendAndGetElement($textblock, "<div>", "card-text-container", VMM.TextElement.create(data.text));
-
-
-            /* Row Three
-             ================================================== */
-            var $share  = VMM.appendAndGetElement($rowThree,"<a href='http://twitter.com/share' class='twitter-share-button' data-url='http://sachin.starsports.com'>Tweet</a><script type='text/javascript' src='http://platform.twitter.com/widgets.js'></script>", "btn btn-custom btn-lg smbtn", "Tweet")
-            $($share).attr("data-text",data.text);
-            $share = VMM.appendAndGetElement($rowThree, "<button type='button' class='sharing' style='margin-right: 20px;' onclick='add_comment_box($(this));'>", "btn btn-custom btn-lg smbtn", "Share");
-
-
-
+            setTimeout(function(){
+                $media = VMM.appendAndGetElement($mediablock, "<div>", "mediaElm", VMM.MediaElement.create(data.asset, data.uniqueid));
+                var $cardHdr = VMM.appendAndGetElement($textblock, "<div>", "cardHeading", VMM.TextElement.create(data.headline, data.uniqueid));
+                var $cardtext	= VMM.appendAndGetElement($textblock, "<div>", "card-text-container", VMM.TextElement.create(data.text));
+            },500)
 
             /* TEXT
             ================================================== */
@@ -7693,7 +7693,7 @@ if(typeof VMM.Timeline != 'undefined' && typeof VMM.Timeline.TimeNav == 'undefin
 		trace("VMM.Timeline.TimeNav");
 
 		var $timenav, $content, $time, $timeintervalminor, $timeinterval, $timeintervalmajor, $timebackground,
-			$timeintervalbackground, $timenavline, $timenavindicator, $timeintervalminor_minor, $toolbar, $zoomin, $zoomout, $dragslide,
+			$timeintervalbackground, $timenavline, $timenavindicator,$timenavindicatorBottom, $timeintervalminor_minor, $toolbar, $zoomin, $zoomout, $dragslide,
 			config					= VMM.Timeline.Config,
 			row_height,
 			events					= {},
@@ -7876,6 +7876,7 @@ if(typeof VMM.Timeline != 'undefined' && typeof VMM.Timeline.TimeNav == 'undefin
 
 			VMM.Lib.css($timenavline, "left", Math.round(config.width/2)+2);
 			VMM.Lib.css($timenavindicator, "left", Math.round(config.width/2)-8);
+			VMM.Lib.css($timenavindicatorBottom, "left", Math.round(config.width/2)-8);
 			goToMarker(config.current_slide, config.ease, config.duration, true, firstrun);
 		};
 
@@ -8946,6 +8947,7 @@ if(typeof VMM.Timeline != 'undefined' && typeof VMM.Timeline.TimeNav == 'undefin
 			$timebackground				= VMM.appendAndGetElement(layout, "<div>", "timenav-background");
 			$timenavline				= VMM.appendAndGetElement($timebackground, "<div>", "timenav-line");
 			$timenavindicator			= VMM.appendAndGetElement($timebackground, "<div>", "timenav-indicator");
+			$timenavindicatorBottom		= VMM.appendAndGetElement($timebackground, "<div>", "timenav-indicator-bottom");
 			$timeintervalbackground		= VMM.appendAndGetElement($timebackground, "<div>", "timenav-interval-background", "<div class='top-highlight'></div>");
 			$toolbar					= VMM.appendAndGetElement(layout, "<div>", "vco-toolbar");
 

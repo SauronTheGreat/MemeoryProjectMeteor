@@ -82,9 +82,12 @@ Template.mainApp.rendered = ()->
 
 # wiring for the button
 @add_comment_box = (v)->
-  image =  $(v).parents().prev().find(".cardImage").attr("src")
-  header = $(v).parents().prev().find(".cardHeading").text()
-  desc = $(v).parents().prev().find(".card-text-container").text()
+  image = $(v).parents(".content").find(".cardImage").attr("src");
+
+  header = $(v).parents(".content").find(".cardHeading").text();
+
+  desc = $(v).parents(".content").find(".card-text-container").text();
+
   image= "http://sachin.starsports.com/"+image
   FB.ui
     method: "feed"
@@ -99,3 +102,13 @@ Template.mainApp.rendered = ()->
     else
       alert "Post was not published."
 
+@twitter_window = (v, e) ->
+  e.preventDefault()
+  width = 575
+  height = 400
+  left = ($(window).width() - width) / 2
+  top = ($(window).height() - height) / 2
+  url = $(v).attr("href")
+  opts = "status=1" + ",width=" + width + ",height=" + height + ",top=" + top + ",left=" + left
+  window.open url, "twitter", opts
+  false
