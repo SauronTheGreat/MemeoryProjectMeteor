@@ -1,0 +1,352 @@
+{
+    "timeline": {
+        "headline": "Score like Sachin",
+        "type": "default",
+        "text": "Content appears infinite? Don't know how to start? Let us then introduce an alternate innovative approach to browsing. <br/><br/> Play the game and notch up runs. And the better you perform, the better the content that gets revealed...",
+        "asset": {
+            "media": "/assets/sachin_timeline_pics/extract/80.png",
+            "credit": "",
+            "caption": ""
+        },
+        "date": [
+            {
+                "headline": "Sachin's entry into cricket",
+                "type": "default",
+                "text": "At 15 years of age, Sachin makes his first class debut. And, hold your breath, scores a century on Ranji Trophy debut, a century on Duleep Trophy debut, and a century on Irani Trophy debut. Still, the only batsman ever to achieve this triple.",
+                "startDate": "1988,1",
+                "score": 1,
+                "asset": {
+                    "media": "//www.youtube.com/embed/koEMdqzyG1Q",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "1989,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 2,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "1990,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 3,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "1991,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 4,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "1992,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 6,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "1993,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": -1,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "1994,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 0,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "1995,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 1,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "1996,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 2,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "1997,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 3,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "1998,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 4,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "1999,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 6,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "2000,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "milestones",
+                "score": -1,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "2001,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "what_people_said",
+                "score": 0,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "2002,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "cc",
+                "score": 1,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "2003,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 2,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "2004,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 3,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "2005,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 4,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "2006,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 6,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "2007,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": -1,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "2008,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 0,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "2009,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 1,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "2010,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 2,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "2011,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 3,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "2012,3",
+                "headline": "Sachin plays a masterful innings",
+                "text": "Sachin scores an unbeaten 100 off just 76 balls as India prepare for the World Cup campaign with Chappell's coaching methods splitting the country down the middle. ",
+                "type": "performances",
+                "score": 4,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/43.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate": "2013,11",
+                "headline": "Farewell, and thank you",
+                "text": "Sachin's 200th Test, against the West Indies at the Wankhede, will be his last. He has carried India's pride on his shoulders, far longer than most of us can imagine... ",
+                "type": "milestones",
+                "score": 6,
+                "asset": {
+                    "media": "/assets/sachin_timeline_pics/extract/17.jpg",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            {
+                "startDate":"2012,4,18",
+                "headline":"This is Testing of ooyalla player",
+                "text":"",
+                "type": "milestones",
+                "score": 0,
+                "asset":
+                {
+                    "media":"http://player.ooyala.com/4zZnVnYTo50yjiq3BdZjnSmJ1pByBIgB",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2011,4,18",
+                "headline":"This is Testing of ooyalla player",
+                "text":"",
+                "type": "milestones",
+                "score": 0,
+                "asset":
+                {
+                    "media":"http://player.ooyala.com/llMDQ6rMWxVWbvdxs2yduVEtSrNCJUk1",
+                    "credit":"",
+                    "caption":""
+                }
+            }
+        ]
+    }
+}
