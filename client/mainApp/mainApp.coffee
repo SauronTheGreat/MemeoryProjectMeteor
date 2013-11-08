@@ -79,3 +79,23 @@ Template.mainApp.rendered = ()->
   $('.chosenbox').val('').trigger("chosen:updated");
 
 
+
+# wiring for the button
+@add_comment_box = (v)->
+  image =  $(v).parents().prev().find(".cardImage").attr("src")
+  header = $(v).parents().prev().find(".cardHeading").text()
+  desc = $(v).parents().prev().find(".card-text-container").text()
+  image= "http://sachin.starsports.com/"+image
+  FB.ui
+    method: "feed"
+    name: header
+    link: "sachin.starsports.com"
+    picture: image
+    caption: "Pay a tribute to sachin"
+    description: desc.toString()
+  , (response) ->
+    if response and response.post_id
+      alert "Post was published."
+    else
+      alert "Post was not published."
+
