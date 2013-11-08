@@ -6135,9 +6135,14 @@ if (typeof VMM.Slider != 'undefined') {
             var $cardHdr = VMM.appendAndGetElement($textblock, "<div>", "cardHeading", VMM.TextElement.create(data.headline, data.uniqueid));
             var $cardtext	= VMM.appendAndGetElement($textblock, "<div>", "card-text-container", VMM.TextElement.create(data.text));
 
+
             /* Row Three
              ================================================== */
-            var $share = VMM.appendAndGetElement($rowThree, "<button type='button' class='sharing' style='margin-right: 20px;' onclick='add_comment_box($(this));'>", "btn btn-custom btn-lg smbtn", "Share");
+            var $share  = VMM.appendAndGetElement($rowThree,"<a href='http://twitter.com/share' class='twitter-share-button' data-url='http://sachin.starsports.com'>Tweet</a><script type='text/javascript' src='http://platform.twitter.com/widgets.js'></script>", "btn btn-custom btn-lg smbtn", "Tweet")
+            $($share).attr("data-text",data.text);
+            $share = VMM.appendAndGetElement($rowThree, "<button type='button' class='sharing' style='margin-right: 20px;' onclick='add_comment_box($(this));'>", "btn btn-custom btn-lg smbtn", "Share");
+
+
 
 
             /* TEXT
