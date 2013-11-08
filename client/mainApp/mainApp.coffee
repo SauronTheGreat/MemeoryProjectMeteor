@@ -45,7 +45,8 @@ Template.mainApp.rendered = ()->
     $("#menu").fadeIn()
     $("#blackbox").fadeIn()
     $("#searchbox").fadeIn()
-    #    $("#batting").fadeIn()  unless tabletLandscape
+    $("#batting").fadeIn()
+    $('.notchie').hide();
     $(".vco-toolbar").fadeIn()
     $(".nav-previous").css "opacity", "1"
     $(".nav-next").css "opacity", "1"
