@@ -30,13 +30,13 @@ a:hover {
 }
 
 #welcome_text {
-  width: 35%;
-  margin-left: 55%;
-  margin-top: 15%;
-  font-size: 13px;
-  color: white;
+  width: 50%;
+  margin-left: 50%;
+  margin-top: 22%;
+  font-size: 20px;
+  color: #aaa;
   line-height: 1.1;
-
+  display: none;;
   background: transparent;
   border-radius: 20px;
   font-family: 'Trebuchet MS', sans-serif;
@@ -78,7 +78,7 @@ a:hover {
     margin-left: 50%;
   }
   #logo_only {
-    width: 40%;
+    width: 20%;
   }
 }
 

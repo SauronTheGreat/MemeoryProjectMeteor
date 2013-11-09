@@ -69,12 +69,10 @@ Template.layout.events
 
 @go_to_year =(target_year)->
   a = target_year;
-  console.log(a)
   rand_card = parseInt($($('.date_no[value*="' + a + '"]')[Math.floor(Math.random() * $('.date_no[value*="' + a + '"]').length)]).prev().prev().val())
-  console.log(rand_card);
   $('.marker').eq(rand_card).find('.flag').trigger("click");
   $('.chosenbox').val('').trigger("chosen:updated");
-
+  $('.chosenbox').focusout();
 
 
 # wiring for the button

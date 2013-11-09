@@ -9,4 +9,5 @@ Template.layout.rendered = ()->
       start_zoom_adjust: 1,
       source: "/resources/data1.json"
     $("body").append("<script type='text/javascript' src='/js/storyjs-embed.js'></script>")
+    $("#welcome_text").fadeIn()
   ,50

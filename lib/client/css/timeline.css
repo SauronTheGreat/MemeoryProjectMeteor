@@ -709,7 +709,7 @@
 .yearHeading {
     font-size: 16px;
     margin-left: 15px;
-    font-family: 'Trebuchet MS',sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
     color: #333;
     text-align: left;
     line-height: 24px;
@@ -721,11 +721,17 @@
     right: 25px;
     top: 25px;
     font-size: 14px;
-    color:#1e2c46;
-    font-family: 'Trebuchet MS',sans-serif;
+    color: #1e2c46;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
-.sharer img{
+@media all and (max-width: 800px) {
+    .sharer span {
+        display: none;
+    }
+}
+
+.sharer img {
     margin-left: 3px;
     cursor: pointer;
 }
@@ -758,14 +764,14 @@
     padding-top: 10px;
 }
 
-@media (max-width:1025px){
+@media (max-width:1025px) {
     .cardHeading {
         top: 20px;
         padding-top: 20px;
     }
 }
 
-@media (max-width:800px){
+@media (max-width:800px) {
     .card-text-container {
         font-size: 18px;
         line-height: 20px;
@@ -774,11 +780,10 @@
     }
 }
 
-
 .vco-slider .slider-item .content .content-container .mediaElm img {
     width: 320px;
-    max-width:320px;
-    max-height:240px;
+    max-width: 320px;
+    max-height: 240px;
 }
 
 .vco-slider .slider-item .content .content-container .media .media-wrapper {
@@ -929,6 +934,20 @@
 .vco-storyjs .vco-feature {
     width: 100%;
     margin-left: 16%;
+}
+
+@media all and (max-width: 800px) {
+    .vco-storyjs .vco-feature {
+        margin-left: 4%;
+    }
+
+    .vco-slider .nav-next .icon {
+        margin-left: 200px;
+    }
+
+    .vco-slider .nav-next:hover .icon {
+        margin-left: 200px;
+    }
 }
 
 .vco-storyjs .vco-feature .slider, .vco-storyjs .vco-feature .vco-slider {
@@ -1390,7 +1409,7 @@
 .vco-timeline .vco-navigation .vco-toolbar {
     top: 27px;
     right: 10px;
-    width:30px;
+    width: 30px;
     /*left: 410px;*/
     display: none;
     background-color: hsl(201, 100%, 30%) !important;
@@ -1604,6 +1623,7 @@
     width: 24px;
     height: 24px
 }
+
 .vco-timeline .vco-navigation .timenav-background .timenav-indicator-bottom {
     position: absolute;
     top: 110px;
