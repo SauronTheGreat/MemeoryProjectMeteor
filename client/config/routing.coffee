@@ -8,6 +8,9 @@ Router.map ->
     layoutTemplate:"layout"
     yieldTemplates:
       'mainApp': {to: 'main'}
+      'game':{to:'gameTemp'}
+
+
 
 
 #Router.map ->
