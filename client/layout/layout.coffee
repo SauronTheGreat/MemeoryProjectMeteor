@@ -3,15 +3,22 @@ Template.layout.rendered = ()->
 
   queryData = this.data
 
+  console.log queryData.searchText
   $("#sachinsprite").show()
   setTimeout ()->
     if queryData.searchText?
-      card_content = crdds.find({text:{$regex:queryData.searchText,$options:'i'}}).fetch()
+      if queryData.searchText is "special"
+        card_content = crdds.find({type:'Bonus Content'}).fetch()
+      else
+        card_content = crdds.find({text:{$regex:queryData.searchText,$options:'i'}}).fetch()
       clickButton()
       flag = true
+
     else
       card_content = crdds.find({}).fetch()
       flag  = false
+    if card_content.length is 0
+      noContentModal()
     @timeline_config =
       width: "100%",
       height: "100%",
@@ -58,6 +65,22 @@ Template.layout.rendered = ()->
   json["timeline"]["date"] = x
   json
 
+
+noContentModal = ()->
+  bootbox.setDefaults
+    className:"noContent"
+  bootbox.dialog
+    title:"No Result"
+    message:"Sorry, the memory project has been stumped by your search - just like Sachin was by Mark Waugh in the 1996 World Cup semi-final. Try again."
+    onEscape:()->
+      true
+    closeButton:true
+    buttons:
+      success:
+        label:"Home"
+        className: "btn btn-default active"
+        callback: ()->
+         window.location.href = "/"
 
 
 
