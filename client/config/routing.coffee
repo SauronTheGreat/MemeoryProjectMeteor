@@ -11,9 +11,13 @@ Router.map ->
       'game':{to:'gameTemp'}
     data:()->
         searchText:this.params.filterData
+    before:()->
+      if navigator.userAgent.toLowerCase().indexOf("iphone") isnt -1
+        window.location.href="/mm/mobile"
   @route "mobile",
      path:"/mm/mobile"
      template:"mobile"
+
 
 
 
