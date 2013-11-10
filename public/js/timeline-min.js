@@ -6133,8 +6133,7 @@ if (typeof VMM.Slider != 'undefined') {
 //            var str = "http://twitter.com/share?text="  + "'" + data.text.replace(/'/g,"") + "'"
 //            var str = "http://twitter.com/share?text="  +encodeURI(data.text)
              var str = "http://twitter.com/share?hashtags="+encodeURI("SachinMemoryProject")+"&text="+encodeURI("http://sachin.starsports.com/");
-
-            var $share = VMM.appendAndGetElement($rowOne, "<div></div>", "sharer","<span>Share this memory </span><img src='/assets/facebook.png' class='fbshare' onclick='add_comment_box($(this))'/> <a href="+str+" class='popup twitter'  onclick='twitter_window($(this),event)'><img src='/assets/twitter.png' class='twitshare'/></a><script type='text/javascript' src='http://platform.twitter.com/widgets.js'></script> ");
+             var $share = VMM.appendAndGetElement($rowOne, "<div></div>", "sharer","<span>Share this memory </span><img src='/assets/facebook.png' class='fbshare' onclick='add_comment_box($(this))'/> <a href="+str+" class='popup twitter'  onclick='twitter_window($(this),event)'><img src='/assets/twitter.png' class='twitshare'/></a><script type='text/javascript' src='http://platform.twitter.com/widgets.js'></script> ");
 //            $($share).attr("data-text",data.text);
 //
 //            $score		= VMM.appendAndGetElement($rowOne, "<div onclick='add_to_favorite($(this));'>", "score", VMM.TextElement.create(data.score, data.uniqueid));
