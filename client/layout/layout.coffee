@@ -80,7 +80,7 @@ Template.layout.rendered = ()->
   json
 
 
-noContentModal = ()->
+@noContentModal = ()->
   bootbox.setDefaults
     className:"noContent"
   bootbox.dialog

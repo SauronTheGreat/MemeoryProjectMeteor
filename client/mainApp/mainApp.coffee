@@ -4,33 +4,56 @@ Template.layout.events
   'click #filter_search':(e)->
 
     searchText = $(e.currentTarget).parent().prev().val()
+    card_content = crdds.find({text:{$regex:searchText,$options:'i'}}).fetch()
+    reload_timeline(card_content)
+#    window.location.href = "/"+searchText
+
+
+  'keypress #srchbx':(e)->
+    if e.which is 13
+      card_content = crdds.find({text:{$regex:$(e.currentTarget).val().trim(),$options:'i'}}).fetch()
+      reload_timeline(card_content)
+#      window.location.href = "/"+$(e.currentTarget).val()
+
+  'click #home':(e)->
+    $("#bottomMenu").find(".active").removeClass("active")
+    $(e.currentTarget).addClass("active")
+    reload_timeline(crdds.find({}).fetch())
+
+  'click #sm':(e)->
+    $("#bottomMenu").find(".active").removeClass("active")
+    $(e.currentTarget).addClass("active")
+    card_content = crdds.find({type:'Bonus Content'}).fetch()
+    reload_timeline(card_content)
+
+  'click #ov':(e)->
+    $("#bottomMenu").find(".active").removeClass("active")
+    $(e.currentTarget).addClass("active")
+    card_content = crdds.find({media:{$regex:'ooyala',$options:'i'}}).fetch()
+    reload_timeline(card_content)
+
+
+
+
+reload_timeline = (data)->
+  if data.length is 0
+    noContentModal()
+  else
     $("#storyjs-timeline").remove()
     setTimeout ()->
-      card_content = crdds.find({text:{$regex:searchText,$options:'i'}}).fetch()
-#      card_content = crdds.find({}).fetch()
 
       $("#jumpToYear").hide()
-
       @timeline_config =
         width: "100%",
         height: "100%",
         start_at_end: true,
         duration: "1000",
         start_zoom_adjust: 1,
-
-#      source: "/resources/data1.json"
-        source:prepare_data(card_content)
+        source:prepare_data(data)
       $("body").append("<script type='text/javascript' src='/js/storyjs-embed.js'></script>")
       filterContentStart()
     ,200
-#    window.location.href = "/"+searchText
-  #    Router.go("/",{optionalParam:searchText})
 
-  'keypress #srchbx':(e)->
-    if e.which is 13
-      card_content = crdds.find({text:{$regex:$(e.currentTarget).val().trim(),$options:'i'}}).fetch()
-
-#      window.location.href = "/"+$(e.currentTarget).val()
 
 defaultStartUpRoutines = ()->
   $("#welcome_text").fadeOut('fast')
