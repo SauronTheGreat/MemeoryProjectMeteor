@@ -27,6 +27,7 @@ a:hover {
   position: absolute;
   z-index: 9999;
   pointer-events: none;
+  display: none;
 }
 
 #welcome_text {
@@ -48,7 +49,6 @@ a:hover {
   top: 2%;
   position: absolute;
   z-index: 1000;
-  pointer-events: none;
   text-align: right;
 }
 
@@ -138,8 +138,8 @@ a:hover {
   top: 4%;
   position: absolute;
   z-index: 1000;
-  pointer-events: none;
   display: none;
+  cursor: pointer;
 }
 
 #batting {
@@ -174,8 +174,8 @@ a:hover {
 }
 
 #timeline-embed {
-  //background: url('/images/header.jpg');
-  background: url('/images/header.jpg');
+  //background: url('/assets/header.jpg');
+  background: url('/assets/backs/header.jpg');
   background-size: 100% 100%;
   width: 100%;
 }
@@ -280,7 +280,7 @@ a:hover {
 }
 
 #fullbar {
-  background: url('/images/stance.png');
+  background: url('/assets/stance.png');
   background-repeat: no-repeat;
   height: 340px;
   width: 500px;
