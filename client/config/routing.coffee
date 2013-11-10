@@ -11,6 +11,9 @@ Router.map ->
       'game':{to:'gameTemp'}
     data:()->
         searchText:this.params.filterData
+  @route "mobile",
+     path:"/mm/mobile"
+     template:"mobile"
 
 
 
