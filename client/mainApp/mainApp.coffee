@@ -10,7 +10,7 @@ Template.layout.events
     if e.which is 13
       window.location.href = "/"+$(e.currentTarget). val()
 
-@clickButton = ()->
+defaultStartUpRoutines = ()->
   $("#welcome_text").fadeOut('fast')
   $(".main").show()
   $('#sachinsprite').animate({
@@ -25,6 +25,8 @@ Template.layout.events
     allow_single_deselect: true
 
   $('.chosenbox').val('').trigger("chosen:updated");
+
+playSachinChant = ()->
   $("audio")[0].volume = 0
   $("audio")[0].play()
   vol = 0
@@ -43,6 +45,10 @@ Template.layout.events
         clearInterval fadevolumeout
         $("audio")[0].pause()
   , interval)
+
+@clickButton = ()->
+  defaultStartUpRoutines()
+  playSachinChant()
 
 
   setTimeout ()->
@@ -79,20 +85,7 @@ Template.layout.events
   ,500
 
 @filterContentStart = ()->
-  $("#welcome_text").fadeOut('fast')
-  $(".main").show()
-  $('#sachinsprite').animate({
-    bottom: "-4%",
-    width: "22%",
-    left: "-5%"
-  });
-  $('#logo_banner_small').fadeIn();
-
-  $('.chosenbox').chosen
-    width: "100%",
-    allow_single_deselect: true
-
-  $('.chosenbox').val('').trigger("chosen:updated");
+  defaultStartUpRoutines()
   setTimeout ()->
     $('.vco-feature').animate
       opacity: 1
