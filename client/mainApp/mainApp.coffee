@@ -101,7 +101,7 @@ playSachinChant = ()->
       opacity: 1
     , 6000, ()->
 
-      $('.marker').eq(0).find('.flag').trigger("click");
+      $('.marker').eq(1).find('.flag').trigger("click");
       $('.vco-navigation').animate
         opacity: 1
       , 2000
@@ -131,37 +131,37 @@ playSachinChant = ()->
 
 @filterContentStart = ()->
   defaultStartUpRoutines()
-  $('.vco-feature').animate
-    opacity: 1
-  , 500, ()->
-    $('.marker').eq(0).find('.flag').trigger("click");
-    $('.vco-navigation').animate
+  setTimeout ()->
+    $('.vco-feature').animate
       opacity: 1
-    , 500
-    setTimeout ()->
+    , 500, ()->
 
-      $("#menu").fadeIn()
-      $("#blackbox").fadeIn()
-      $("#searchbox").fadeIn()
-      $("#batting").fadeIn()
-      $(".vco-toolbar").fadeIn()
-      $(".nav-previous").css "opacity", "1"
-      $(".nav-next").css "opacity", "1"
-      $(".score").show()
-      $(".vco-storyjs button").show()
-      $('#storyjs-timeline').animate
-        marginLeft: "+=2000px"
-      , 'fast', ()->
-        $('.marker').eq(1).find('.flag').trigger("click")
+      $('.marker').eq(1).find('.flag').trigger("click");
+      $('.vco-navigation').animate
+        opacity: 1
+      , 500
+      setTimeout ()->
 
-      $.each($(".slider-item"), (index, elm)->
-        $(elm).find(".smbtn").addClass("social_media_share_btn");
-      )
+        $("#menu").fadeIn()
+        $("#blackbox").fadeIn()
+        $("#searchbox").fadeIn()
+        $("#batting").fadeIn()
+        $(".vco-toolbar").fadeIn()
+        $(".nav-previous").css "opacity", "1"
+        $(".nav-next").css "opacity", "1"
+        $(".score").show()
+        $(".vco-storyjs button").show()
 
-    ,500
+        $.each($(".slider-item"), (index, elm)->
+          $(elm).find(".smbtn").addClass("social_media_share_btn");
+        )
 
-
-  ,700
+      ,700
+  ,500
+  $('#storyjs-timeline').animate
+    marginLeft: "+=2000px"
+  , 'fast', ()->
+    $('.marker').eq(($('.marker').length - 1)).find('.flag').trigger("click")
 
 
 
