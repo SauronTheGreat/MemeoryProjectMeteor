@@ -100,7 +100,8 @@ playSachinChant = ()->
     $('.vco-feature').animate
       opacity: 1
     , 6000, ()->
-      $('.marker').eq(1).find('.flag').trigger("click");
+
+      $('.marker').eq(0).find('.flag').trigger("click");
       $('.vco-navigation').animate
         opacity: 1
       , 2000
@@ -115,51 +116,54 @@ playSachinChant = ()->
         $(".nav-next").css "opacity", "1"
         $(".score").show()
         $(".vco-storyjs button").show()
-        $('#storyjs-timeline').animate
-          marginLeft: "+=2000px"
-        , 'fast', ()->
-          $('.marker').eq(($('.marker').length - 1)).find('.flag').trigger("click")
 
         $.each($(".slider-item"), (index, elm)->
           $(elm).find(".smbtn").addClass("social_media_share_btn");
         )
 
       ,4000
-
-
   ,500
+  $('#storyjs-timeline').animate
+    marginLeft: "+=2000px"
+  , 'fast', ()->
+      $('.marker').eq(($('.marker').length - 1)).find('.flag').trigger("click")
+
 
 @filterContentStart = ()->
   defaultStartUpRoutines()
-  setTimeout ()->
-    $('.vco-feature').animate
+  $('.vco-feature').animate
+    opacity: 1
+  , 500, ()->
+    $('.marker').eq(0).find('.flag').trigger("click");
+    $('.vco-navigation').animate
       opacity: 1
-    , 500, ()->
-      $('.marker').eq(1).find('.flag').trigger("click");
-      $('.vco-navigation').animate
-        opacity: 1
-      , 500
-      setTimeout ()->
+    , 500
+    setTimeout ()->
 
-        $("#menu").fadeIn()
-        $("#blackbox").fadeIn()
-        $("#searchbox").fadeIn()
-        $("#batting").fadeIn()
-        $(".vco-toolbar").fadeIn()
-        $(".nav-previous").css "opacity", "1"
-        $(".nav-next").css "opacity", "1"
-        $(".score").show()
-        $(".vco-storyjs button").show()
-        $('#storyjs-timeline').animate
-          marginLeft: "+=2000px"
-        , 'fast', ()->
-          $('.marker').eq(($('.marker').length - 1)).find('.flag').trigger("click")
+      $("#menu").fadeIn()
+      $("#blackbox").fadeIn()
+      $("#searchbox").fadeIn()
+      $("#batting").fadeIn()
+      $(".vco-toolbar").fadeIn()
+      $(".nav-previous").css "opacity", "1"
+      $(".nav-next").css "opacity", "1"
+      $(".score").show()
+      $(".vco-storyjs button").show()
+      $('#storyjs-timeline').animate
+        marginLeft: "+=2000px"
+      , 'fast', ()->
+        $('.marker').eq(1).find('.flag').trigger("click")
 
-        $.each($(".slider-item"), (index, elm)->
-          $(elm).find(".smbtn").addClass("social_media_share_btn");
-        )
-      ,500
+      $.each($(".slider-item"), (index, elm)->
+        $(elm).find(".smbtn").addClass("social_media_share_btn");
+      )
+
+    ,500
+
+
   ,700
+
+
 
 @go_to_year =(target_year)->
   a = target_year;
