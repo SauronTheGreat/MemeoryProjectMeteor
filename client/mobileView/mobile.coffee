@@ -1,15 +1,10 @@
 Template.mobile.rendered = ()->
   $("#owl-example").owlCarousel
-     items :1,
-#    itemsDesktop : [1199,4],
-#    itemsDesktopSmall : [980,3],
-#    itemsTablet: [768,2],
-#    itemsTabletSmall: false,
-#    itemsMobile : [479,1],
-#    singleItem : false,
-#    itemsScaleUp : false,
-#      autoHeight:true,
-#      autoPLay:true
+    items : 5, #10 items above 1000px browser width
+    itemsDesktop : [1000,5], #5 items between 1000px and 901px
+    itemsDesktopSmall : [900,3], # betweem 900px and 601px
+    itemsTablet: [600,2], #2 items between 600 and 0
+    itemsMobile : false #itemsMobile disabled - inherit from itemsTablet option
 
 
 Template.mobile.cards = ()->
