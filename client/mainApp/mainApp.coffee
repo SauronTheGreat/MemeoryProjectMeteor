@@ -189,11 +189,11 @@ playSachinChant = ()->
     picture: image
     caption: "Pay a tribute to sachin"
     description: desc.toString()
-  , (response) ->
-    if response and response.post_id
-      alert "Post was published."
-    else
-      alert "Post was not published."
+#  , (response) ->
+#    if response and response.post_id
+#      alert "Post was published."
+#    else
+#      alert "Post was not published."
 
 @twitter_window = (v, e) ->
   e.preventDefault()
