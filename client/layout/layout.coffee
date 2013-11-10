@@ -25,7 +25,7 @@ Template.layout.rendered = ()->
         else
           card_content = crdds.find({text:{$regex:queryData.searchText,$options:'i'}}).fetch()
           $("#jumpToYear").hide()
-      clickButton()
+      filterContentStart()
       flag = true
 
     else

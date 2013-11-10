@@ -78,6 +78,54 @@ Template.layout.events
 
   ,500
 
+@filterContentStart = ()->
+  $("#welcome_text").fadeOut('fast')
+  $(".main").show()
+  $('#sachinsprite').animate({
+    bottom: "-4%",
+    width: "22%",
+    left: "-5%"
+  });
+  $('#logo_banner_small').fadeIn();
+
+  $('.chosenbox').chosen
+    width: "100%",
+    allow_single_deselect: true
+
+  $('.chosenbox').val('').trigger("chosen:updated");
+  setTimeout ()->
+    $('.vco-feature').animate
+      opacity: 1
+    , 500, ()->
+      $('.marker').eq(1).find('.flag').trigger("click");
+      $('.vco-navigation').animate
+        opacity: 1
+      , 500
+      setTimeout ()->
+
+        $("#menu").fadeIn()
+        $("#blackbox").fadeIn()
+        $("#searchbox").fadeIn()
+        $("#batting").fadeIn()
+        $(".vco-toolbar").fadeIn()
+        $(".nav-previous").css "opacity", "1"
+        $(".nav-next").css "opacity", "1"
+        $(".score").show()
+        $(".vco-storyjs button").show()
+        $('#storyjs-timeline').animate
+          marginLeft: "+=2000px"
+        , 'fast', ()->
+          $('.marker').eq(($('.marker').length - 1)).find('.flag').trigger("click")
+
+        $.each($(".slider-item"), (index, elm)->
+          $(elm).find(".smbtn").addClass("social_media_share_btn");
+        )
+
+      ,500
+
+
+  ,700
+
 @go_to_year =(target_year)->
   a = target_year;
   rand_card = parseInt($($('.date_no[value*="' + a + '"]')[Math.floor(Math.random() * $('.date_no[value*="' + a + '"]').length)]).prev().prev().val())
