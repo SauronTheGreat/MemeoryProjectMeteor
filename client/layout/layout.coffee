@@ -3,14 +3,26 @@ Template.layout.rendered = ()->
 
   queryData = this.data
 
-  console.log queryData.searchText
+
   $("#sachinsprite").show()
   setTimeout ()->
     if queryData.searchText?
       if queryData.searchText is "special"
         card_content = crdds.find({type:'Bonus Content'}).fetch()
+        $("#bottomMenu").find(".active").removeClass("active")
+        $("#sm").addClass("active")
+
+
       else
-        card_content = crdds.find({text:{$regex:queryData.searchText,$options:'i'}}).fetch()
+        if queryData.searchText is "videos"
+          card_content = crdds.find({media:{$regex:'ooyala',$options:'i'}}).fetch()
+          $("#bottomMenu").find(".active").removeClass("active")
+          $("#ov").addClass("active")
+
+
+
+        else
+          card_content = crdds.find({text:{$regex:queryData.searchText,$options:'i'}}).fetch()
       clickButton()
       flag = true
 
@@ -34,7 +46,7 @@ Template.layout.rendered = ()->
 
 
 @prepare_data = (data)->
-  console.log data
+
   json =
     timeline:
       headline: "Welcome"
