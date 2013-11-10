@@ -1,5 +1,5 @@
 Template.mobile.rendered = ()->
-  alert window.innerWidth
+#  alert window.innerWidth
   $("#owl-example").owlCarousel
     items : 3, #10 items above 1000px browser width
     itemsDesktop : [1000,1], #5 items between 1000px and 901px
