@@ -1,4 +1,9 @@
-.owl-item{
-    /*margin:200px;*/
-    margin-top: 0;
+.slider-container_mobile {
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: block
 }
