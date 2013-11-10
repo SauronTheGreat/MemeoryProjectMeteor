@@ -5,10 +5,10 @@ Template.mobile.rendered = ()->
 #    itemsDesktopSmall : [980,3],
 #    itemsTablet: [768,2],
 #    itemsTabletSmall: false,
-#    itemsMobile : [479,1],
+    itemsMobile : [479,1],
 #    singleItem : false,
 #    itemsScaleUp : false,
-      autoHeight:true,
+#      autoHeight:true,
 #      autoPLay:true
 
 
