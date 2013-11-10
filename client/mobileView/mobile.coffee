@@ -8,9 +8,9 @@ Template.mobile.rendered = ()->
 #    itemsMobile : [479,1],
 #    singleItem : false,
 #    itemsScaleUp : false,
-#      autoHeight:true,
+      autoHeight:true,
 #      autoPLay:true
 
 
 Template.mobile.cards = ()->
-  x = crdds.find({}).fetch()[2..5]
+  x = crdds.find({}).fetch()[2..10]
