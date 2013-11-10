@@ -5278,6 +5278,7 @@ if(typeof VMM != 'undefined' && typeof VMM.Slider == 'undefined') {
 		};
 
 		function reSize(go_to_slide, from_start) {
+           config.current_slide = 0;
 			var _go_to_slide	= true,
 				_from_start		= false;
 
@@ -5301,7 +5302,9 @@ if(typeof VMM != 'undefined' && typeof VMM.Slider == 'undefined') {
 			VMM.Lib.width($slides_items, (slides.length * config.slider.content.width));
 
 			if (_from_start) {
-				VMM.Lib.css($slider_container, "left", slides[current_slide].leftpos());
+
+//				VMM.Lib.css($slider_container, "left", slides[current_slide].leftpos());
+                VMM.Lib.css($slider_container, "left", slides[0].leftpos());
 			}
 
 			// RESIZE SLIDES
@@ -5898,6 +5901,7 @@ if(typeof VMM != 'undefined' && typeof VMM.Slider == 'undefined') {
 				VMM.bindEvent($explainer, onExplainerClick);
 				VMM.bindEvent($explainer, onExplainerClick, 'touchend');
 			}
+
 
 			reSize(false, true);
 
@@ -7142,6 +7146,7 @@ if(typeof VMM != 'undefined' && typeof VMM.Timeline == 'undefined') {
 			 var hash					=	window.location.hash.substring(1);
 			 if (!isNaN(hash)) {
 			 	 config.current_slide	=	parseInt(hash);
+
 			 }
 		}
 
@@ -7466,10 +7471,12 @@ if(typeof VMM != 'undefined' && typeof VMM.Timeline == 'undefined') {
 			// START AT SLIDE
 			if (parseInt(config.start_at_slide) > 0 && config.current_slide == 0) {
 				config.current_slide = parseInt(config.start_at_slide);
+
 			}
 			// START AT END
 			if (config.start_at_end && config.current_slide == 0) {
 				config.current_slide = _dates.length - 1;
+
 			}
 
 

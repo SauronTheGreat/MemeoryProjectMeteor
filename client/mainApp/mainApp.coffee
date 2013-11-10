@@ -2,13 +2,35 @@ Template.layout.events
   'click .enter':(e)->
     clickButton()
   'click #filter_search':(e)->
+
     searchText = $(e.currentTarget).parent().prev().val()
-    window.location.href = "/"+searchText
+    $("#storyjs-timeline").remove()
+    setTimeout ()->
+      card_content = crdds.find({text:{$regex:searchText,$options:'i'}}).fetch()
+#      card_content = crdds.find({}).fetch()
+
+      $("#jumpToYear").hide()
+
+      @timeline_config =
+        width: "100%",
+        height: "100%",
+        start_at_end: true,
+        duration: "1000",
+        start_zoom_adjust: 1,
+
+#      source: "/resources/data1.json"
+        source:prepare_data(card_content)
+      $("body").append("<script type='text/javascript' src='/js/storyjs-embed.js'></script>")
+      filterContentStart()
+    ,200
+#    window.location.href = "/"+searchText
   #    Router.go("/",{optionalParam:searchText})
 
   'keypress #srchbx':(e)->
     if e.which is 13
-      window.location.href = "/"+$(e.currentTarget). val()
+      card_content = crdds.find({text:{$regex:$(e.currentTarget).val().trim(),$options:'i'}}).fetch()
+
+#      window.location.href = "/"+$(e.currentTarget).val()
 
 defaultStartUpRoutines = ()->
   $("#welcome_text").fadeOut('fast')
@@ -113,10 +135,7 @@ playSachinChant = ()->
         $.each($(".slider-item"), (index, elm)->
           $(elm).find(".smbtn").addClass("social_media_share_btn");
         )
-
       ,500
-
-
   ,700
 
 @go_to_year =(target_year)->

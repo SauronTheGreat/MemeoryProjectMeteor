@@ -19,11 +19,9 @@ Template.layout.rendered = ()->
           $("#bottomMenu").find(".active").removeClass("active")
           $("#ov").addClass("active")
           $("#jumpToYear").hide()
-
-
-
         else
           card_content = crdds.find({text:{$regex:queryData.searchText,$options:'i'}}).fetch()
+
           $("#jumpToYear").hide()
       filterContentStart()
       flag = true
@@ -37,6 +35,7 @@ Template.layout.rendered = ()->
       width: "100%",
       height: "100%",
       start_at_end: true,
+
       duration: "1000",
       start_zoom_adjust: 1,
 #      source: "/resources/data1.json"
@@ -77,6 +76,7 @@ Template.layout.rendered = ()->
 
 
   json["timeline"]["date"] = x
+
   json
 
 
