@@ -11,18 +11,20 @@ Template.layout.rendered = ()->
         card_content = crdds.find({type:'Bonus Content'}).fetch()
         $("#bottomMenu").find(".active").removeClass("active")
         $("#sm").addClass("active")
-
+        $("#jumpToYear").hide()
 
       else
         if queryData.searchText is "videos"
           card_content = crdds.find({media:{$regex:'ooyala',$options:'i'}}).fetch()
           $("#bottomMenu").find(".active").removeClass("active")
           $("#ov").addClass("active")
+          $("#jumpToYear").hide()
 
 
 
         else
           card_content = crdds.find({text:{$regex:queryData.searchText,$options:'i'}}).fetch()
+          $("#jumpToYear").hide()
       clickButton()
       flag = true
 
