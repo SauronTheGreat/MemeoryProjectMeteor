@@ -1,8 +1,17 @@
 Template.layout.rendered = ()->
 
 
+  queryData = this.data
+
   $("#sachinsprite").show()
   setTimeout ()->
+    if queryData.searchText?
+      card_content = crdds.find({text:{$regex:queryData.searchText,$options:'i'}}).fetch()
+      clickButton()
+      flag = true
+    else
+      card_content = crdds.find({}).fetch()
+      flag  = false
     @timeline_config =
       width: "100%",
       height: "100%",
@@ -10,13 +19,15 @@ Template.layout.rendered = ()->
       duration: "1000",
       start_zoom_adjust: 1,
 #      source: "/resources/data1.json"
-      source:prepare_data(crdds.find({}).fetch())
+      source:prepare_data(card_content)
     $("body").append("<script type='text/javascript' src='/js/storyjs-embed.js'></script>")
-    $("#welcome_text").fadeIn()
-  ,50
+    if(!flag)
+     $("#welcome_text").fadeIn()
+  ,200
 
 
 @prepare_data = (data)->
+  console.log data
   json =
     timeline:
       headline: "Welcome"

@@ -2770,7 +2770,8 @@ if(typeof VMM != 'undefined' && typeof VMM.Language == 'undefined') {
 		},
 		messages: {
 			loading_timeline: "Loading Timeline... ",
-			return_to_title: "Back to 1988",
+			return_to_title: "Jump to the first card",
+			go_to_end: "Jump to the last card",
 			expand_timeline: "Expand Timeline",
 			contract_timeline: "Contract Timeline",
 			wikipedia: "From Wikipedia, the free encyclopedia",
@@ -4577,7 +4578,7 @@ if(typeof VMM != 'undefined' && typeof VMM.MediaElement == 'undefined') {
 					VMM.ExternalAPI.vimeo.get(m);
 		    // OOYALA
 				} else if (m.type		==	"ooyala") {
-					mediaElem			=	"<div class='media-shadow media-frame video ooyala' id='" + m.uid + "'>" + loading_messege + "</div>";
+					mediaElem			=	"<div class='media-shadow media-frame video ooyala' id='" + m.uid + "'>" +''+"</div>";
 					VMM.ExternalAPI.ooyala.get(m);
 			// DAILYMOTION
 				} else if (m.type		==	"dailymotion") {
@@ -6126,9 +6127,10 @@ if (typeof VMM.Slider != 'undefined') {
             var $dateHdr = VMM.appendAndGetElement($rowOne, "<div>", "dateHeading", VMM.TextElement.create(VMM.Date.prettyDate(data.startdate, false, data.precisiondate).split(" ")[0], data.uniqueid));
 //            VMM.appendAndGetElement($rowThree,"<a href='http://twitter.com/share' class='twitter-share-button' data-url='http://sachin.starsports.com'>Tweet</a><script type='text/javascript' src='http://platform.twitter.com/widgets.js'></script>", "btn btn-custom btn-lg smbtn", "Tweet")
 //            var str = "http://twitter.com/share?text="  + "'" + data.text.replace(/'/g,"") + "'"
-            var str = "http://twitter.com/share?text="  +encodeURI(data.text)
+//            var str = "http://twitter.com/share?text="  +encodeURI(data.text)
+             var str = "http://twitter.com/share?hashtags="+encodeURI("SachinMemoryProject")+"&text="+encodeURI("http://sachin.starsports.com/");
 
-            var $share = VMM.appendAndGetElement($rowOne, "<div></div>", "sharer","<span>Share this memory </span><img src='/images/facebook.png' class='fbshare' onclick='add_comment_box($(this))'/> <a href="+str+"class='popup twitter'  onclick='twitter_window($(this),event)'><img src='/images/twitter.png' class='twitshare'/></a><script type='text/javascript' src='http://platform.twitter.com/widgets.js'></script> ");
+            var $share = VMM.appendAndGetElement($rowOne, "<div></div>", "sharer","<span>Share this memory </span><img src='/assets/facebook.png' class='fbshare' onclick='add_comment_box($(this))'/> <a href="+str+" class='popup twitter'  onclick='twitter_window($(this),event)'><img src='/assets/twitter.png' class='twitshare'/></a><script type='text/javascript' src='http://platform.twitter.com/widgets.js'></script> ");
 //            $($share).attr("data-text",data.text);
 //
 //            $score		= VMM.appendAndGetElement($rowOne, "<div onclick='add_to_favorite($(this));'>", "score", VMM.TextElement.create(data.score, data.uniqueid));
@@ -7934,6 +7936,11 @@ if(typeof VMM.Timeline != 'undefined' && typeof VMM.Timeline.TimeNav == 'undefin
 			goToMarker(0);
 			upDate();
 		}
+        function goToEnd(e) {
+			$dragslide.cancelSlide();
+			goToMarker($('.marker').length-1);
+			upDate();
+		}
 
 		function onMouseScroll(e) {
 			var delta		= 0,
@@ -8963,13 +8970,14 @@ if(typeof VMM.Timeline != 'undefined' && typeof VMM.Timeline.TimeNav == 'undefin
 			positionInterval($timeintervalmajor, interval_major_array);
 
 
-			if (config.start_page) {
-				$backhome = VMM.appendAndGetElement($toolbar, "<div>", "back-home", "<div class='icon'></div>");
+				var $backhome = VMM.appendAndGetElement($toolbar, "<div>", "back-home", "<div class='icon'></div>");
 				VMM.bindEvent(".back-home", onBackHome, "click");
 				VMM.Lib.attribute($backhome, "title", VMM.master_config.language.messages.return_to_title);
 				VMM.Lib.attribute($backhome, "rel", "timeline-tooltip");
-
-			}
+                var $gotoend = VMM.appendAndGetElement($toolbar, "<div>", "goToEnd", "<div class='icon'></div>");
+				VMM.bindEvent(".goToEnd", goToEnd, "click");
+				VMM.Lib.attribute($gotoend, "title", VMM.master_config.language.messages.go_to_end);
+				VMM.Lib.attribute($gotoend, "rel", "timeline-tooltip");
 
 
 			// MAKE TIMELINE DRAGGABLE/TOUCHABLE
@@ -8980,28 +8988,28 @@ if(typeof VMM.Timeline != 'undefined' && typeof VMM.Timeline.TimeNav == 'undefin
 
 			if (config.touch && config.start_page) {
 				VMM.Lib.addClass($toolbar, "touch");
-				VMM.Lib.css($toolbar, "top", 55);
+				VMM.Lib.css($toolbar, "top", 27);
 				VMM.Lib.css($toolbar, "left", 10);
 			} else {
 				if (config.start_page) {
 					VMM.Lib.css($toolbar, "top", 0);
 				}
-				$zoomin		= VMM.appendAndGetElement($toolbar, "<div>", "zoom-in", "<div class='icon'></div>");
-				$zoomout	= VMM.appendAndGetElement($toolbar, "<div>", "zoom-out", "<div class='icon'></div>");
-				// ZOOM EVENTS
-				VMM.bindEvent($zoomin, onZoomIn, "click");
-				VMM.bindEvent($zoomout, onZoomOut, "click");
-				// TOOLTIP
-				VMM.Lib.attribute($zoomin, "title", VMM.master_config.language.messages.expand_timeline);
-				VMM.Lib.attribute($zoomin, "rel", "timeline-tooltip");
-				VMM.Lib.attribute($zoomout, "title", VMM.master_config.language.messages.contract_timeline);
-				VMM.Lib.attribute($zoomout, "rel", "timeline-tooltip");
-				$toolbar.tooltip({selector: "div[rel=timeline-tooltip]", placement: "left"});
-
-
-				// MOUSE EVENTS
-				VMM.bindEvent(layout, onMouseScroll, 'DOMMouseScroll');
-				VMM.bindEvent(layout, onMouseScroll, 'mousewheel');
+//				$zoomin		= VMM.appendAndGetElement($toolbar, "<div>", "zoom-in", "<div class='icon'></div>");
+//				$zoomout	= VMM.appendAndGetElement($toolbar, "<div>", "zoom-out", "<div class='icon'></div>");
+//				// ZOOM EVENTS
+//				VMM.bindEvent($zoomin, onZoomIn, "click");
+//				VMM.bindEvent($zoomout, onZoomOut, "click");
+//				// TOOLTIP
+//				VMM.Lib.attribute($zoomin, "title", VMM.master_config.language.messages.expand_timeline);
+//				VMM.Lib.attribute($zoomin, "rel", "timeline-tooltip");
+//				VMM.Lib.attribute($zoomout, "title", VMM.master_config.language.messages.contract_timeline);
+//				VMM.Lib.attribute($zoomout, "rel", "timeline-tooltip");
+//				$toolbar.tooltip({selector: "div[rel=timeline-tooltip]", placement: "left"});
+//
+//
+//				// MOUSE EVENTS
+//				VMM.bindEvent(layout, onMouseScroll, 'DOMMouseScroll');
+//				VMM.bindEvent(layout, onMouseScroll, 'mousewheel');
 			}
 
 

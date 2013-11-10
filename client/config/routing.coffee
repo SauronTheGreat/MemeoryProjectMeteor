@@ -3,12 +3,14 @@
 
 Router.map ->
   @route "landing",
-    path: "/"
+    path: "/:optionalParam?"
     template: "landing"
     layoutTemplate:"layout"
     yieldTemplates:
       'mainApp': {to: 'main'}
       'game':{to:'gameTemp'}
+    data:()->
+        searchText:this.params.optionalParam
 
 
 
