@@ -29,8 +29,8 @@ Template.layout.rendered = ()->
       card_content = crdds.find({}).fetch()
       flag  = false
 
-    if card_content.length is 0
-      noContentModal()
+#    if card_content.length is 0
+#      noContentModal()
 #    @timeline_config =
 #      width: "100%",
 #      height: "100%",
