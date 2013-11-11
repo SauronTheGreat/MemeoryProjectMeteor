@@ -18,6 +18,7 @@ Template.mobile.rendered = ()->
 
 
 Template.mobile.cards = ()->
+  console.log "random"
   start = Math.floor((Math.random()*500)+1);
-  end = start+24
+  end = start+10
   crdds.find({}).fetch()[start..end]
