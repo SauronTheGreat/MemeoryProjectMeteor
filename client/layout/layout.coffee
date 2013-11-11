@@ -6,28 +6,28 @@ Template.layout.rendered = ()->
 
   $("#sachinsprite").show()
   setTimeout ()->
-    if queryData.searchText?
-      if queryData.searchText is "special"
-        card_content = crdds.find({type:'Bonus Content'}).fetch()
-        $("#bottomMenu").find(".active").removeClass("active")
-        $("#sm").addClass("active")
-        $("#jumpToYear").hide()
-
-      else
-        if queryData.searchText is "videos"
-          card_content = crdds.find({media:{$regex:'ooyala',$options:'i'}}).fetch()
-          $("#bottomMenu").find(".active").removeClass("active")
-          $("#ov").addClass("active")
-          $("#jumpToYear").hide()
-        else
-          card_content = crdds.find({text:{$regex:queryData.searchText,$options:'i'}}).fetch()
-          $("#jumpToYear").hide()
-      filterContentStart()
-      flag = true
-
-    else
-      card_content = crdds.find({}).fetch()
-      flag  = false
+#    if queryData.searchText?
+#      if queryData.searchText is "special"
+#        card_content = crdds.find({type:'Bonus Content'}).fetch()
+#        $("#bottomMenu").find(".active").removeClass("active")
+#        $("#sm").addClass("active")
+#        $("#jumpToYear").hide()
+#
+#      else
+#        if queryData.searchText is "videos"
+#          card_content = crdds.find({media:{$regex:'ooyala',$options:'i'}}).fetch()
+#          $("#bottomMenu").find(".active").removeClass("active")
+#          $("#ov").addClass("active")
+#          $("#jumpToYear").hide()
+#        else
+#          card_content = crdds.find({text:{$regex:queryData.searchText,$options:'i'}}).fetch()
+#          $("#jumpToYear").hide()
+#      filterContentStart()
+#      flag = true
+#
+#    else
+#      card_content = crdds.find({}).fetch()
+#      flag  = false
 
 #    if card_content.length is 0
 #      noContentModal()
@@ -41,7 +41,7 @@ Template.layout.rendered = ()->
 ##      source: "/resources/data1.json"
 #      source:prepare_data(card_content)
 #    $("body").append("<script type='text/javascript' src='/js/storyjs-embed.js'></script>")
-    if(!flag)
+#    if(!flag)
      $("#welcome_text").fadeIn()
   ,500
 #  setTimeout ()->

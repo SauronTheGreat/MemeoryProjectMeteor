@@ -10,6 +10,7 @@ Template.mobile.rendered = ()->
     autoPlay: true
     lazyLoad:true
     lazyEffect:"fade"
+    pagination:false
 
 
 Template.mobile.cards = ()->
