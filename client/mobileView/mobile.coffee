@@ -12,6 +12,12 @@ Template.mobile.rendered = ()->
     lazyEffect:"fade"
     pagination:false
 
+Template.mobile.events
+   'click #refresh_mobile_content':(e)->
+     window.location.href = "/"
+
 
 Template.mobile.cards = ()->
-  x = crdds.find({}).fetch()[2..10]
+  start = Math.floor((Math.random()*500)+1);
+  end = start+24
+  crdds.find({}).fetch()[start..end]
