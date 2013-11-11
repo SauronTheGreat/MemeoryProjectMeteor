@@ -8,8 +8,8 @@ Template.mobile.rendered = ()->
     itemsTablet: [600,1], #2 items between 600 and 0
     itemsMobile : [600,1] #itemsMobile disabled - inherit from itemsTablet option
     autoPlay: true
-    lazyLoad:true
-    lazyEffect:"fade"
+#    lazyLoad:true
+#    lazyEffect:"fade"
     pagination:false
 
 #Template.mobile.events
