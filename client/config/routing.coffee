@@ -11,8 +11,10 @@ Router.map ->
       'game':{to:'gameTemp'}
     data:()->
         searchText:this.params.filterData
+    waitOn:()->
+      Meteor.subscribe('cards')
     before:()->
-      this.subscribe('cards').wait()
+#      this.subscribe('cards').wait()
       if navigator.userAgent.toLowerCase().indexOf("iphone") isnt -1 or navigator.userAgent.toLowerCase().indexOf("android") isnt -1
         window.location.href="/mm/mobile"
   @route "mobile",
