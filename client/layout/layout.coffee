@@ -42,7 +42,7 @@ Template.layout.rendered = ()->
     $("body").append("<script type='text/javascript' src='/js/storyjs-embed.js'></script>")
     if(!flag)
      $("#welcome_text").fadeIn()
-  ,200
+  ,2000
   setTimeout ()->
     if card_content.length is 0
       noContentModal()
