@@ -1,5 +1,5 @@
 Template.layout.rendered = ()->
-  Meteor.subscribe "cards"
+
 
   queryData = this.data
 
@@ -21,7 +21,6 @@ Template.layout.rendered = ()->
           $("#jumpToYear").hide()
         else
           card_content = crdds.find({text:{$regex:queryData.searchText,$options:'i'}}).fetch()
-
           $("#jumpToYear").hide()
       filterContentStart()
       flag = true
@@ -29,9 +28,8 @@ Template.layout.rendered = ()->
     else
       card_content = crdds.find({}).fetch()
       flag  = false
-      console.log "all"
-    if card_content.length is 0
-      noContentModal()
+
+
     @timeline_config =
       width: "100%",
       height: "100%",
@@ -45,6 +43,10 @@ Template.layout.rendered = ()->
     if(!flag)
      $("#welcome_text").fadeIn()
   ,200
+  setTimeout ()->
+    if card_content.length is 0
+      noContentModal()
+  ,2000
 
 
 @prepare_data = (data)->
