@@ -43,10 +43,10 @@ Template.layout.rendered = ()->
     if(!flag)
      $("#welcome_text").fadeIn()
   ,2000
-  setTimeout ()->
-    if card_content.length is 0
-      noContentModal()
-  ,2000
+#  setTimeout ()->
+#    if card_content.length is 0
+#      noContentModal()
+#  ,2000
 
 
 @prepare_data = (data)->
