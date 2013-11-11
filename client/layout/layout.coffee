@@ -31,16 +31,16 @@ Template.layout.rendered = ()->
 
     if card_content.length is 0
       noContentModal()
-    @timeline_config =
-      width: "100%",
-      height: "100%",
-      start_at_end: true,
-
-      duration: "1000",
-      start_zoom_adjust: 1,
-#      source: "/resources/data1.json"
-      source:prepare_data(card_content)
-    $("body").append("<script type='text/javascript' src='/js/storyjs-embed.js'></script>")
+#    @timeline_config =
+#      width: "100%",
+#      height: "100%",
+#      start_at_end: true,
+#
+#      duration: "1000",
+#      start_zoom_adjust: 1,
+##      source: "/resources/data1.json"
+#      source:prepare_data(card_content)
+#    $("body").append("<script type='text/javascript' src='/js/storyjs-embed.js'></script>")
     if(!flag)
      $("#welcome_text").fadeIn()
   ,500
