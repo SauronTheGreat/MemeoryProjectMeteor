@@ -29,6 +29,7 @@ Template.layout.rendered = ()->
     else
       card_content = crdds.find({}).fetch()
       flag  = false
+      console.log "all"
     if card_content.length is 0
       noContentModal()
     @timeline_config =
