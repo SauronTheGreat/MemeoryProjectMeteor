@@ -29,7 +29,8 @@ Template.layout.rendered = ()->
       card_content = crdds.find({}).fetch()
       flag  = false
 
-
+    if card_content.length is 0
+      noContentModal()
     @timeline_config =
       width: "100%",
       height: "100%",
@@ -42,10 +43,9 @@ Template.layout.rendered = ()->
     $("body").append("<script type='text/javascript' src='/js/storyjs-embed.js'></script>")
     if(!flag)
      $("#welcome_text").fadeIn()
-  ,2000
+  ,500
 #  setTimeout ()->
-#    if card_content.length is 0
-#      noContentModal()
+#
 #  ,2000
 
 

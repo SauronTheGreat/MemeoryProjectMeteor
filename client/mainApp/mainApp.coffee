@@ -1,5 +1,6 @@
 Template.layout.events
   'click .enter':(e)->
+
     clickButton()
   'click #filter_search':(e)->
 
@@ -35,7 +36,7 @@ Template.layout.events
 
 
 
-reload_timeline = (data)->
+@reload_timeline = (data)->
   if data.length is 0
     noContentModal()
   else
@@ -102,6 +103,7 @@ playSachinChant = ()->
     , 6000, ()->
 
       $('.marker').eq(1).find('.flag').trigger("click");
+
       $('.vco-navigation').animate
         opacity: 1
       , 2000
