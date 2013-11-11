@@ -22,4 +22,8 @@ Template.mobile.cards = ()->
   start = Math.floor((Math.random()*500)+1);
   console.log "crdds.find({}).fetch().length"
   end = start+10
-  crdds.find({},reactive:false).fetch()[start..end]
+  if crdds.find({}).fetch().length > 20
+     crdds.find({},reactive:false).fetch()[start..end]
+  else
+    crdds.find({},reactive:true).fetch()[start..end]
+
