@@ -24,5 +24,5 @@ Template.mobile.cards = ()->
   if crdds.find({}).fetch().length is 755
      crdds.find({}).fetch()[start..end]
   else
-     []
+    crdds.find({}).fetch()[0]
 
