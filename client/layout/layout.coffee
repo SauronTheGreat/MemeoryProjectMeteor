@@ -44,7 +44,7 @@ Template.layout.rendered = ()->
     $("body").append("<script type='text/javascript' src='/js/storyjs-embed.js'></script>")
     if(!flag)
      $("#welcome_text").fadeIn()
-  ,500
+  ,2000
 
 
 @prepare_data = (data)->
