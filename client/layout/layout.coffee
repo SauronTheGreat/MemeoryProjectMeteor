@@ -1,5 +1,5 @@
 Template.layout.rendered = ()->
-
+  Meteor.subscribe "cards"
 
   queryData = this.data
 
@@ -44,7 +44,7 @@ Template.layout.rendered = ()->
     $("body").append("<script type='text/javascript' src='/js/storyjs-embed.js'></script>")
     if(!flag)
      $("#welcome_text").fadeIn()
-  ,2000
+  ,200
 
 
 @prepare_data = (data)->
