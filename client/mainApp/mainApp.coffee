@@ -1,17 +1,20 @@
 Template.layout.events
   'click .enter':(e)->
-     setTimeout ()->
-        @timeline_config =
-          width: "100%",
-          height: "100%",
-          start_at_end: true,
-          duration: "1000",
-          start_zoom_adjust: 1,
-    #      source: "/resources/data1.json"
-          source:prepare_data(crdds.find({}).fetch())
-        $("body").append("<script type='text/javascript' src='/js/storyjs-embed.js'></script>")
-        clickButton()
-     ,500
+      defaultStartUpRoutines()
+      playSachinChant()
+
+      setTimeout ()->
+            @timeline_config =
+              width: "100%",
+              height: "100%",
+              start_at_end: true,
+              duration: "1000",
+              start_zoom_adjust: 1,
+        #      source: "/resources/data1.json"
+              source:prepare_data(crdds.find({}).fetch())
+            $("body").append("<script type='text/javascript' src='/js/storyjs-embed.js'></script>")
+            clickButton()
+         ,100
 
   'click #filter_search':(e)->
 
@@ -104,8 +107,8 @@ playSachinChant = ()->
   , interval)
 
 @clickButton = ()->
-  defaultStartUpRoutines()
-  playSachinChant()
+#  defaultStartUpRoutines()
+#  playSachinChant()
 
 
   setTimeout ()->
