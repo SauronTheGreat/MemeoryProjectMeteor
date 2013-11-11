@@ -12,9 +12,9 @@ Template.mobile.rendered = ()->
     lazyEffect:"fade"
     pagination:false
 
-Template.mobile.events
-   'click #refresh_mobile_content':(e)->
-     window.location.href = "/"
+#Template.mobile.events
+#   'click #refresh_mobile_content':(e)->
+#     window.location.href = "/"
 
 
 Template.mobile.cards = ()->
