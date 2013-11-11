@@ -14,7 +14,7 @@ Template.layout.events
               source:prepare_data(crdds.find({}).fetch())
             $("body").append("<script type='text/javascript' src='/js/storyjs-embed.js'></script>")
             clickButton()
-         ,300
+         ,100
 
   'click #filter_search':(e)->
 
